@@ -1,12 +1,11 @@
 name: CI
-on:
-   # События, которые запускают jobs
-    push:
-      branches: [ "main" ]
-    pull_request:
-      branches: [ "main" ]
 
-# jobs запускаются параллельно, если не указана последовательность
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
   my_build_job:
     runs-on: ubuntu-latest
@@ -15,15 +14,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Run a multi-line script
-            run: |
-                echo Add other actions to build,
-                echo test, and deploy your project.
-
-
-
-#Читаю файл: workflow файл запускает jobs с названием my_build_job
-# при событиях отправки кода в репозиторий и создания Pull Request на ветке 
-#main. my_build_job запускается на ОС Ubuntu, использует action с
-# названием actions/checkout@v3 и выполняет 2 шага: пишут в
-# консоль однострочный и многостроный тексты.
-              
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project..
+       
